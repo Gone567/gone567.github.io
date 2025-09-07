@@ -1,0 +1,179 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Jaycee!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Happy Birthday Jaycee!</h1>
+    <p class="message">Wishing you a day filled with love, laughter, and all your favorite things!</p>
+    <div class="cake-container">
+      <div class="cake">
+        <div class="candle"></div>
+      </div>
+    </div>
+    <div class="balloons">
+      <div class="balloon red"></div>
+      <div class="balloon blue"></div>
+      <div class="balloon green"></div>
+      <div class="balloon yellow"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<style>body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  background-image: linear-gradient(to bottom, #f2f2f2, #fff);
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+  animation: bounce 2s infinite;
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.message {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  animation: fadeIn 3s;
+}
+
+.cake-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cake {
+  width: 100px;
+  height: 100px;
+  background-color: #ffcccc;
+  border-radius: 50%;
+  position: relative;
+  animation: spin 4s infinite;
+  box-shadow: 0 0 10px rgba(255, 204, 204, 0.5);
+}
+
+.candle {
+  width: 10px;
+  height: 20px;
+  background-color: #ff0000;
+  position: absolute;
+  top: -20px;
+  left: 45px;
+  animation: flicker 1s infinite;
+}
+
+.balloons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.balloon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: float 3s infinite;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.green {
+  background-color: #00ff00;
+}
+
+.yellow {
+  background-color: #ffff00;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+</style><script>// Add JavaScript animations here
+// For example, you can add a confetti effect
+const container = document.querySelector('.container');
+
+function createConfetti() {
+  const confetti = document.createElement('div');
+  confetti.style.position = 'absolute';
+  confetti.style.width = '5px';
+  confetti.style.height = '5px';
+  confetti.style.borderRadius = '50%';
+  confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+  confetti.style.top = `${Math.random() * 100}%`;
+  confetti.style.left = `${Math.random() * 100}%`;
+  container.appendChild(confetti);
+
+  setTimeout(() => {
+    confetti.remove();
+  }, 2000);
+}
+
+setInterval(createConfetti, 100);</script>
